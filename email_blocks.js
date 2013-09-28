@@ -21,8 +21,24 @@ function do_merge() {
         emails.push(ans[0]);
         txt = txt.substring(ans.index+ans[0].length);
     }
+    
+    var total = emails.length;
+    
+    unique = {};
+    for (n in emails) {
+        unique[emails[n].toLowerCase()] = emails[n];
+    }
+    emails = [];
+    for (n in unique) {
+        emails.push(unique[n]);
+    }
+    /* emails.sort(); - nope - indicates spam to some filters */
+    
     jQ("#output").empty();
-    jQ("#output").append(jQ("<p>"+emails.length+" email addresses found.</p>"));
+    jQ("#output").append(jQ("<p>"+total+" email addresses found.</p>"));
+    if (emails.length != total) {
+        jQ("#output").append(jQ("<p>Using "+emails.length+" unique emails.</p>"));
+    }
     console.log([count, separator]);
     for (n in emails) {
         if (n % count == 0) {
