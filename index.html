@@ -1,0 +1,21 @@
+<html><head>
+<title>Format email lists for mailing in blocks</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="email_blocks.js"></script>
+<style>
+* { font-family: sans-serif; }
+.block { margin-top: 1em; font-weight:bold; font-size:135%}
+</style>
+</head>
+<body>
+<h1>Format email lists for mailing in blocks</h1>
+<p>Extracts emails from pasted input and presents in groups to allow mailing
+below the email service's limit of recipients per message.</p>
+<p>Paste emails:</p>
+<textarea rows='20' cols='80'></textarea>
+<div><button>Format</button> <input id='count' value='30' size='3'> at a time,
+separator: <input id='separator' value=',' size='3'></div>
+<div id='output'></div>
+
+</body>
+</html>
